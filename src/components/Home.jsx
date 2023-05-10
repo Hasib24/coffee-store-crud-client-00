@@ -1,9 +1,15 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import AddCoffee from './AddCoffee';
+import CoffeCard from './CoffeCard';
 
 const Home = () => {
+
+    const coffees = useLoaderData();
+    
     return (
         <div>
-            Home
+            {coffees.map(coffee =><CoffeCard key={coffee._id} coffee={coffee}></CoffeCard>)}
         </div>
     );
 };
