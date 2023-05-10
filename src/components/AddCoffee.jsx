@@ -12,6 +12,14 @@ const AddCoffee = () => {
 
         console.log(coffee);
 
+        fetch('http://localhost:5000/addcoffee', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(coffee)
+        })
+
     }
 
 
