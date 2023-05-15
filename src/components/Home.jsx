@@ -1,15 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import AddCoffee from './AddCoffee';
-import CoffeCard from './CoffeCard';
 
 const Home = () => {
-
-    const coffees = useLoaderData();
-    
     return (
-        <div>
-            {coffees.map(coffee =><CoffeCard key={coffee._id} coffee={coffee}></CoffeCard>)}
+        <div className="flex justify-center items-center bg-[url(https://i.ibb.co/TwJwWsv/3.png)] bg-center bg-cover h-[85vh] ">
+            <h1 className='text-6xl font-bold '>Coffee House</h1>
         </div>
     );
 };
