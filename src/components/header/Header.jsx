@@ -4,7 +4,7 @@ import Logo from '../../assets/images/more/20.png'
 import { AuthContext } from '../../provider/AuthContextProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     return (
         <div className='py-5 border flex justify-between items-center px-10'>
             <div> <img src={Logo} alt="" /></div>
@@ -14,7 +14,7 @@ const Header = () => {
 
                 {user ? <>
                     <NavLink className='p-1' to={'/addcoffee'}>Add coffee</NavLink>
-                    <NavLink className='p-1' to={'logout'}>Logout</NavLink>
+                    <NavLink className='p-1' onClick={logOut}>Logout</NavLink>
                 </>
                 : 
                     <NavLink className='p-1' to={'/signin'}>SignIn</NavLink>
