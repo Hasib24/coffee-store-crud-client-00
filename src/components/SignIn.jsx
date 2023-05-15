@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthContextProvider';
 
 
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext)
 
 
 
@@ -17,6 +19,7 @@ const Login = () => {
 
         signInUser(email, password)
         .then(res => setUser(res.user))
+        .catch(error => console.log(error.message))
 
      
     }
