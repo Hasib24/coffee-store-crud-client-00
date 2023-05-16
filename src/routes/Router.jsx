@@ -6,6 +6,7 @@ import Coffees from "../components/Coffees";
 import SignIn from "../components/SignIn";
 import Logout from "../components/Logout";
 import Register from "../components/Register";
+import PrivateRoutes from "../routes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/coffees",
-          element: <Coffees></Coffees>,
+          element: <PrivateRoutes><Coffees></Coffees></PrivateRoutes> ,
           loader: ()=>fetch('http://localhost:5000/addcoffee')
         },
         {
